@@ -26,6 +26,7 @@ class PokemonCard extends Component {
                 <h1>{this.state.name}</h1>
                 <p>{this.state.pokemonIndex}</p>
                 <img src={this.state.imageUrl} alt=''/>
+                <p>test</p>
             </div>
         );
     }
