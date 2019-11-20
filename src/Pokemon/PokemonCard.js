@@ -22,11 +22,11 @@ class PokemonCard extends Component {
     
     render() {
         return ( 
-            <div>
+            <div className='PokemonList'>
                 <h1>{this.state.name}</h1>
                 <p>{this.state.pokemonIndex}</p>
                 <img src={this.state.imageUrl} alt=''/>
-            </div>
+            </div>   
         );
     }
 }
