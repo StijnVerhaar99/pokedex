@@ -7,7 +7,7 @@ import PokemonCard from './PokemonCard';
 
 class PokemonList extends Component {
     state = { 
-        url: "https://pokeapi.co/api/v2/pokemon/?limit=3",
+        url: "https://pokeapi.co/api/v2/pokemon/?limit=5",
         pokemon: null,
         pokeNum: 1,
     }
@@ -19,12 +19,20 @@ class PokemonList extends Component {
 
     numberUp = () => {
         this.setState({ pokeNum : this.state.pokeNum + 1});
-        console.log(this.state.pokeNum);
+        //console.log(this.state.pokeNum);
+        this.checkSelected();
     }
 
     numberDown = () => {
         this.setState({ pokeNum : this.state.pokeNum - 1});
-        console.log(this.state.pokeNum);
+        //console.log(this.state.pokeNum);
+        this.checkSelected();
+    }
+
+    checkSelected = () => {
+        var elem = document.getElementById(this.state.pokeNum);
+
+        elem.style.color = 'red';
     }
  
     render() {

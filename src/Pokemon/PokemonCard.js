@@ -9,15 +9,16 @@ class PokemonCard extends Component {
         name : ' ',
         imageUrl : ' ',
         pokemonIndex : ' ',
-        num : ''
+        num : ' '
     };
 
     componentDidMount() {
         const name = this.props.name;
         const url = this.props.url;
-        const num = this.props.num;
+        const num = this.props.pokeNum;
         const pokemonIndex = url.split('/')[url.split('/').length - 2 ];
-        const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`
+        const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
+        
 
         this.setState ({
             name,
@@ -30,10 +31,19 @@ class PokemonCard extends Component {
     render() {
 
         const sameNum = this.state.pokemonIndex === this.state.num;
-        console.log(this.state.pokemonIndex);
-        console.log(this.state.num);
+        
+        //console.log(this.state.pokemonIndex);
+        console.log(this.props.num);
+
+        // const checkSelected = () => {
+        //     var elem = document.getElementById(this.props.num)[0];
+
+        //     elem.style.color = 'red';
+        // }
 
         let message;
+
+        //checkSelected();
 
         if (sameNum) {
             message = (
